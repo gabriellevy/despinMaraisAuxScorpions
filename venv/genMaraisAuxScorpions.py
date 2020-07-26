@@ -8,8 +8,11 @@ class GenMaraisAuxScorpions(GenHist):
 
     def __init__(self):
         GenHist.__init__(self, "Le marais aux scorpions")
+
+    def GenererHistoire(self):
         self.GenererPreparationAventure()
         self.GenererNumeros()
+        return self._m_Histoire
 
     def GenererPreparationAventure(self):
         self.AjouterEvt("Préparation aventure")
