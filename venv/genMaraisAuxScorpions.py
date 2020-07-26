@@ -16,6 +16,7 @@ class GenMaraisAuxScorpions(GenHist):
 
     def GenererPreparationAventure(self):
         self.AjouterEvt("Préparation aventure")
+        self.AjouterEffet("Rien à faire ici pour l'instant")
 
     def GenererNumeros(self):
         self.AjouterEvt("Numéros")
