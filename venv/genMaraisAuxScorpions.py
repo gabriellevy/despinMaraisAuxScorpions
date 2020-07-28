@@ -58,5 +58,7 @@ question qu'on vous laisse partir là-bas disent-ils. », et l'un d'eux
 a même l'audace de poser sa main calleuse sur votre épaule pour
 vous empêcher de quitter la taverne. Qu'allez-vous faire ?
 """, "1")
+        self.AjouterChoix("Tirer votre épée pour leur montrer qu'il ne fait pas bon se mettre en travers de votre chemin ?")
+        self.AjouterChoix("Leur expliquer poliment que votre décision est irrévocable ?")
         self.AjouterEffet("Il se passe des choses dans cet effet d'histoire ! ", "2")
         self.AjouterEffet("Mais vraiment plein de trucs ", "3")
