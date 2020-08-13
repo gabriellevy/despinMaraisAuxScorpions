@@ -1,5 +1,6 @@
 from gen.gen_histoire import *
 from numeros1_50 import *
+from numeros51_100 import *
 
 class GenMaraisAuxScorpions(GenHist):
     """
@@ -23,5 +24,4 @@ class GenMaraisAuxScorpions(GenHist):
         self.AjouterEvt("Numéros")
         GenererNumeros1_10(self)
         GenererNumeros41_50(self)
-
-
+        GenererNumeros91_100(self)
