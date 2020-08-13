@@ -1,6 +1,7 @@
 from gen.gen_histoire import *
 from numeros1_50 import *
 from numeros51_100 import *
+from random import randrange
 
 class GenMaraisAuxScorpions(GenHist):
     """
@@ -25,3 +26,31 @@ class GenMaraisAuxScorpions(GenHist):
         GenererNumeros1_10(self)
         GenererNumeros41_50(self)
         GenererNumeros91_100(self)
+
+
+    def GenererCaracs(self):
+        """
+        génère toutes les caracs qui peuvent être visualisées par le joueur
+        (d'autres caracs peuvent être générées et invisibles n'importe quand dans l'aventure)
+        """
+        perso = GenHist.GenererCaracs(self)
+        # note : ce serait mieux de pouvoir tirer au dé pour déterminer ces valeurs
+        habilete = 6 + randrange(1,7)
+        perso.AjouterCarac("Habileté", habilete)
+        chance = 6 + randrange(1,7)
+        perso.AjouterCarac("Chance", chance)
+        endurance = 12 + randrange(1,7) + randrange(1,7)
+        perso.AjouterCarac("Endurance", endurance)
+
+        return perso
+    """
+    int endurance = 12 + Aleatoire::GetAl()->D6() + Aleatoire::GetAl()->D6();
+    GestCarac::GetGestionnaireCarac()->AjouterCaracNombre(LDOELH::ENDURANCE, endurance, 0, endurance);
+
+    int chance = 6 + Aleatoire::GetAl()->D6();
+    GestCarac::GetGestionnaireCarac()->AjouterCaracNombre(LDOELH::CHANCE, chance, 0, chance);
+
+    GestCarac::GetGestionnaireCarac()->AjouterCaracNombre(LDOELH::REPAS, 10, 0, 10);
+
+    Equipement::GetEquipementDepart();
+    """
