@@ -56,3 +56,4 @@ def GenererNumeros41_50(genHist):
         perdez 1 point de CHANCE pour vous être montré agressif envers
         ces paisibles villageois.
         """, "48")
+    genHist.AjouterRetireurCarac("Chance", 1)
