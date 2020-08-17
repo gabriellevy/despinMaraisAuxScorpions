@@ -3,6 +3,7 @@ from numeros1_50 import *
 from numeros51_100 import *
 from random import randrange
 from caracLDOELH import CaracLDOELH
+from chance import *
 
 class GenMaraisAuxScorpions(GenHist):
     """
@@ -44,6 +45,12 @@ class GenMaraisAuxScorpions(GenHist):
         perso.AjouterCarac(CaracLDOELH.ENDURANCE, endurance)
 
         return perso
+
+    def AjouterEffetTenterLaChanceGoTo(self, texte, id, idGoToMalchanceux, idGoToChanceux, evt = ""):
+        effet = self.AjouterEffet(texte, id, evt)
+        effet.m_LancerDe = TenterChance( idGoToMalchanceux, idGoToChanceux)
+        #hum problème pour avoir une fonction comme membre d'un classe là (plus exécution pas faite...)'
+
     """
     int endurance = 12 + Aleatoire::GetAl()->D6() + Aleatoire::GetAl()->D6();
     GestCarac::GetGestionnaireCarac()->AjouterCaracNombre(LDOELH::ENDURANCE, endurance, 0, endurance);

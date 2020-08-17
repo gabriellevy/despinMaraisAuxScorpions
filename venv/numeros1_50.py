@@ -79,7 +79,9 @@ def GenererNumeros1_10(genHist):
         brandissant son épée de pierre.
         """, "4")
     genHist.AjouterChoixGoToEffet("Si vous voulez la combattre", goToEffetId="284")
-    genHist.AjouterChoixGoToEffet("Si vous préférez attaquer Stratagus luimême", goToEffetId="123")
+    genHist.AjouterChoixGoToEffet("Si vous préférez attaquer Stratagus lui-même", goToEffetId="123")
+
+    genHist.AjouterEffetTenterLaChanceGoTo("Tentez votre Chance.", "5", "273", "297")
 
 
 def GenererNumeros41_50(genHist):
