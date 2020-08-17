@@ -1,3 +1,5 @@
+from caracLDOELH import CaracLDOELH
+
 def GenererNumeros1_10(genHist):
     genHist.AjouterEffet("""Le chemin est long pour arriver jusqu'au Marais qui s'étend à
         l'extrême ouest du royaume, et votre voyage abonde en péripéties
@@ -94,4 +96,4 @@ def GenererNumeros41_50(genHist):
         perdez 1 point de CHANCE pour vous être montré agressif envers
         ces paisibles villageois.
         """, "48")
-    genHist.AjouterRetireurCarac("Chance", 1)
+    genHist.AjouterRetireurCarac(CaracLDOELH.CHANCE, 1)
