@@ -39,8 +39,46 @@ def GenererNumeros1_10(genHist):
     genHist.AjouterChoixGoToEffet( \
         "Leur expliquer poliment que votre décision est irrévocable ?", goToEffetId="95")
 
-    genHist.AjouterEffet("Il se passe des choses dans cet effet d'histoire ! ", "2")
-    genHist.AjouterEffet("Mais vraiment plein de trucs ", "3")
+    genHist.AjouterEffet("""
+        Votre histoire le fascine, et, bientôt, il se lève d'un mouvement
+        lent puis s'approche d'une table sur laquelle un globe est posé. Il
+        le fait alors tourner sur son axe, révélant à l'intérieur de la sphère
+        une cachette où sont empilées des Pièces d'Or. Il y en a tant que
+        les yeux vous sortent de la tête. « Accepteriez-vous de me le
+        vendre ? demande Pompatarte avec un sourire. Je vous en offre
+        cent Pièces d'Or fin. »
+        """, "2")
+    genHist.AjouterChoixGoToEffet("Si vous acceptez son offre", goToEffetId="49")
+    genHist.AjouterChoixGoToEffet("Si vous préférez refuser", goToEffetId="173")
+
+    genHist.AjouterEffet("""
+        Moins de deux kilomètres plus loin, vous trébuchez dans un trou,
+        et vos deux pieds s'enfoncent aussitôt dans la vase. Vous essayez
+        en vain de vous dégager en agrippant une plante, mais sa tige
+        casse, et vous vous enlisez plus profondément encore. De petits
+        cris retentissent alors derrière vous. Vous vous efforcez
+        d'empoigner votre épée, mais des dents pointues se plantent
+        dans votre main et, quelques instants plus tard, des dizaines de
+        rats sont sur vous. Il vous est impossible de vous enfuir ou de les
+        combattre et bientôt, ainsi que l'avaient prédit les gens du
+        village, il ne reste plus de vous qu'un squelette sur lequel vient se
+        refléter la lumière pâle qui filtre entre les arbres. Votre aventure
+        est terminée. La prochaine fois vous saurez que, sans le secours
+        de la magie, on ne sort pas vivant du Marais aux Scorpions.
+        """, "3")
+
+    genHist.AjouterEffet("""
+        Le sorcier éclate d'un rire mauvais. « Je ne vais certainement pas
+        gaspiller mon énergie à combattre un aussi piètre adversaire,
+        lance-t-il avec mépris, mais exercez donc votre bravoure contre
+        ceci... » Il fait alors un signe de la main en direction de la
+        STATUE D'UN GOBELIN qui se dresse à l'abri d'une niche
+        aménagée dans le mur. La statue s'avance aussitôt vers vous en
+        brandissant son épée de pierre.
+        """, "4")
+    genHist.AjouterChoixGoToEffet("Si vous voulez la combattre", goToEffetId="284")
+    genHist.AjouterChoixGoToEffet("Si vous préférez attaquer Stratagus luimême", goToEffetId="123")
+
 
 def GenererNumeros41_50(genHist):
     genHist.AjouterEffet("""Vous empoignez le pommeau de votre épée, prêt à dégainer, et
