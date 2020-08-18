@@ -1,6 +1,8 @@
 from gen.gen_histoire import *
 from numeros1_50 import *
 from numeros51_100 import *
+from numeros151_200 import *
+from numeros251_300 import *
 from random import randrange
 from caracLDOELH import CaracLDOELH
 from chance import *
@@ -27,7 +29,11 @@ class GenMaraisAuxScorpions(GenHist):
         self.AjouterEvt("Numéros")
         GenererNumeros1_10(self)
         GenererNumeros41_50(self)
+
         GenererNumeros91_100(self)
+
+        GenererNumeros271_280(self)
+        GenererNumeros291_300(self)
 
 
     def GenererCaracs(self):
@@ -46,9 +52,9 @@ class GenMaraisAuxScorpions(GenHist):
 
         return perso
 
-    def AjouterEffetTenterLaChanceGoTo(self, texte, id, idGoToMalchanceux, idGoToChanceux, evt = ""):
+    def AjouterEffetTenterLaChanceGoTo(self, texte, id, idGoToChanceux, idGoToMalchanceux, evt = ""):
         effet = self.AjouterEffet(texte, id, evt)
-        effet.m_LancerDe = TenterChance( idGoToMalchanceux, idGoToChanceux)
+        effet.m_LancerDe = TenterChance( idGoToChanceux, idGoToMalchanceux)
         #hum problème pour avoir une fonction comme membre d'un classe là (plus exécution pas faite...)'
 
     """

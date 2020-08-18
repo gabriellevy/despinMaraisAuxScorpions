@@ -83,6 +83,54 @@ def GenererNumeros1_10(genHist):
 
     genHist.AjouterEffetTenterLaChanceGoTo("Tentez votre Chance.", "5", "273", "297")
 
+    genHist.AjouterEffet("""
+        Vous revenez dans la maison de Gayolard. Un feu brûle dans la
+        cheminée de la cuisine et une délicieuse odeur se répand
+        alentour : quelque mets délectable est en train de mijoter dans la
+        marmite. Le sorcier vous accueille avec cordialité et vous pose
+        aussitôt cette question : « Avez-vous la baie ? »
+        """, "6")
+    genHist.AjouterChoixGoToEffet("Si vous avez réussi à lui rapporter le fruit violet de l'Anthérique", goToEffetId="175")
+    genHist.AjouterChoixGoToEffet("Sinon,", goToEffetId="52")
+
+    genHist.AjouterEffet("""
+        Le visage du mauvais sorcier s'assombrit et les dessins de sa robe
+        se mettent à danser devant vos yeux d'une manière menaçante. «
+        C'est toujours mieux que rien, marmonne-t-il. Donnez-moi ce
+        que vous avez et vous recevrez 250 Pièces d'Or en échange. »
+        """, "7")
+    genHist.AjouterChoixGoToEffet("Si vous acceptez son offre,", goToEffetId="266")
+    genHist.AjouterChoixGoToEffet("Si vous préférez lui rappeler qu'il vous avait promis davantage,", goToEffetId="207")
+
+    genHist.AjouterEffet("""
+        « C'est dommage, soupire-t-il, il faudra que je trouve quelqu'un
+        d'autre. S'il vous reste quelques-unes des Pierres de Magie que je
+        vous ai données, je vous les échange contre une Potion de
+        Guérison. » Qu'allez-vous faire ?
+        """, "8")
+    genHist.AjouterChoixGoToEffet("Échanger les Pierres qui vous restent contre la Potion ?", goToEffetId="141")
+    genHist.AjouterChoixGoToEffet("Lui expliquer que vous les avez toutes utilisées ?", goToEffetId="316")
+    genHist.AjouterChoixGoToEffet("Attaquer Pompatarte ?", goToEffetId="341")
+
+    genHist.AjouterEffet("""
+        Vous vous trouvez à la lisière sud du Marais aux Scorpions. Grâce
+        à l'Anneau de Cuivre, vous saurez toujours où est le nord, mais il
+        vous faut quand même tracer une carte sur laquelle devront
+        figurer tous les sentiers que vous emprunterez et les clairières
+        que vous explorerez (voir page 21 les indications concernant la
+        manière d'établir cette carte). Vous découvrez très vite un sentier
+        orienté au nord qui s'enfonce à l'intérieur du Marais. Quelques
+        mots peints grossièrement sur un roc vous donnent cet
+        avertissement : ATTENTION ! MARAIS AUX SCORPIONS ! FAITES DEMITOUR
+        ! Deux tibias croisés surmontés d'un crâne complètent cette
+        recommandation dont, bien entendu, vous ne tenez aucun
+        compte. D'une démarche assurée, vous franchissez la lisière du
+        marécage et vous comprenez aussitôt qu'il serait tout à fait
+        imprudent de vous aventurer dans la vase qui borde le sentier.Il
+        vous faut suivre celui-ci jusqu'au bout sans vous en écarter le
+        moins du monde.
+        """, "9", goToEffetId="195")
+
 
 def GenererNumeros41_50(genHist):
     genHist.AjouterEffet("""Vous empoignez le pommeau de votre épée, prêt à dégainer, et

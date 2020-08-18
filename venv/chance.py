@@ -5,7 +5,7 @@ from caracLDOELH import *
 
 class TenterChance(LancerDe):
 
-    def __init__(self, idGoToMalchanceux, idGoToChanceux):
+    def __init__(self, idGoToChanceux, idGoToMalchanceux):
         LancerDe.__init__(self, 2)
         self.m_IdGoToMalchanceux = idGoToMalchanceux
         self.m_IdGoToChanceux = idGoToChanceux
