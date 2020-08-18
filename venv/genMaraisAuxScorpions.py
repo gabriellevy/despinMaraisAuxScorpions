@@ -28,9 +28,12 @@ class GenMaraisAuxScorpions(GenHist):
     def GenererNumeros(self):
         self.AjouterEvt("Numéros")
         GenererNumeros1_10(self)
+        GenererNumeros11_20(self)
         GenererNumeros41_50(self)
 
         GenererNumeros91_100(self)
+
+        GenererNumeros191_200(self)
 
         GenererNumeros271_280(self)
         GenererNumeros291_300(self)

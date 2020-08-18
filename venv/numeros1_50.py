@@ -131,6 +131,35 @@ def GenererNumeros1_10(genHist):
         moins du monde.
         """, "9", goToEffetId="195")
 
+    genHist.AjouterEffet("""
+        Les arbres noueux s'écartent bientôt devant vous, et vous entrez
+        dans une autre clairière. C'est la Clairière n° 5. Vous constatez aussitôt qu'on s'est
+        battu ici. Le sol a été piétiné, l'herbe humide est tachée de sang et
+        deux flèches sont plantées dans un arbre un peu plus loin.
+        """, "10")
+    genHist.AjouterChoixGoToEffet("Si vous y êtes déjà venu,", goToEffetId="142")
+    genHist.AjouterChoixGoToEffet("Si vous souhaitez examiner cette clairière pour voir ce qu'elle recèle", goToEffetId="59")
+    genHist.AjouterChoixGoToEffet("Si vous préférez la quitter le plus vite possible", goToEffetId="227")
+
+def GenererNumeros11_20(genHist):
+    genHist.AjouterEffet("""
+        En progressant vers l'ouest, le Marais devient plus sinistre
+        encore et vous êtes en train de vous demander si vous pourrez en
+        supporter davantage lorsqu’enfin le sentier s'élargit pour aboutir
+        à une étroite et longue échappée. C'est la Clairière n° 6. Vous jetez un coup d'oeil autour de vous : il n'y a aucun
+        autre sentier. Il semble que vous soyez arrivé dans un cul-de-sac.
+        Vous vous approchez alors d'un grand rocher gris sur lequel vous
+        comptez vous allonger pour prendre quelque repos. Mais,
+        soudain, le rocher bouge ! Cette couleur grise n'était pas celle de
+        la pierre mais d'un pelage rêche. Deux yeux rouges vous fixent
+        d'un regard furieux et une BÊTE IMMONDE dotée de six pattes
+        griffues, s'avance aussitôt vers vous. Qu'allez-vous faire ?
+        """, "11")
+    genHist.AjouterChoixGoToEffet("Si vous y êtes déjà venu,", goToEffetId="210")
+    genHist.AjouterChoixGoToEffet("La combattre ?", goToEffetId="176")
+    genHist.AjouterChoixGoToEffet("Prendre la Fuite ?", goToEffetId="102")
+    genHist.AjouterChoixGoToEffet("Essayer de lui jeter un sort ?", goToEffetId="374")
+
 
 def GenererNumeros41_50(genHist):
     genHist.AjouterEffet("""Vous empoignez le pommeau de votre épée, prêt à dégainer, et
