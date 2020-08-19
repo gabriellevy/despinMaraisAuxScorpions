@@ -6,6 +6,7 @@ from numeros251_300 import *
 from random import randrange
 from caracLDOELH import CaracLDOELH
 from chance import *
+from combat import *
 
 class GenMaraisAuxScorpions(GenHist):
     """
@@ -58,16 +59,22 @@ class GenMaraisAuxScorpions(GenHist):
     def AjouterEffetTenterLaChanceGoTo(self, texte, id, idGoToChanceux, idGoToMalchanceux, evt = ""):
         effet = self.AjouterEffet(texte, id, evt)
         effet.m_LancerDe = TenterChance( idGoToChanceux, idGoToMalchanceux)
-        #hum problème pour avoir une fonction comme membre d'un classe là (plus exécution pas faite...)'
 
-    """
-    int endurance = 12 + Aleatoire::GetAl()->D6() + Aleatoire::GetAl()->D6();
-    GestCarac::GetGestionnaireCarac()->AjouterCaracNombre(LDOELH::ENDURANCE, endurance, 0, endurance);
+    def AjouterEffetCombat(self, texte, id, nomMonstre, habileteMonstre, enduranceMonstre, goToVictoire, goToDefaite = "",
+                           degatsMonstre = 2, pvRestantsMonstreAvantGoToFinal=0, evt = ""):
+        """
+        gère les combats tant qu'ils ne sont pas trop étranges au point de nécessiter une fonction spécifique
+        :param texte:
+        :param id:
+        :param nomMonstre:
+        :param habileteMonstre:
+        :param goToVictoire:
+        :param goToDefaite:
+        :param degatsMonstre:
+        :param pvRestantsMonstreAvantGoToFinal:
+        :param evt:
+        :return:
+        """
+        effet = self.AjouterEffet(texte, id, evt)
+        effet.m_LancerDe = Combat( nomMonstre, habileteMonstre, enduranceMonstre, goToVictoire, goToDefaite, degatsMonstre, pvRestantsMonstreAvantGoToFinal)
 
-    int chance = 6 + Aleatoire::GetAl()->D6();
-    GestCarac::GetGestionnaireCarac()->AjouterCaracNombre(LDOELH::CHANCE, chance, 0, chance);
-
-    GestCarac::GetGestionnaireCarac()->AjouterCaracNombre(LDOELH::REPAS, 10, 0, 10);
-
-    Equipement::GetEquipementDepart();
-    """

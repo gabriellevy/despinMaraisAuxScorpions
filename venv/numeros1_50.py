@@ -160,6 +160,17 @@ def GenererNumeros11_20(genHist):
     genHist.AjouterChoixGoToEffet("Prendre la Fuite ?", goToEffetId="102")
     genHist.AjouterChoixGoToEffet("Essayer de lui jeter un sort ?", goToEffetId="374")
 
+    genHist.AjouterEffetCombat("""
+        Le GÉANT se bat en poussant des cris de fureur. Il est doué d'une
+        force extraordinaire mais, par chance pour vous, ses gestes sont
+        plutôt maladroits et sa massue ne vous frappe que rarement.
+        Lorsqu'elle atteint son but, cependant, vous perdez 4 points
+        d'ENDURANCE au lieu de 2 en raison de la puissance du coup.
+        Aussi, faites attention !
+        
+        GÉANT HABILETÉ: 9 ENDURANCE: 12
+        """, "12", "GÉANT", 9, 12, "61", degatsMonstre = 4, pvRestantsMonstreAvantGoToFinal=6)
+
 
 def GenererNumeros41_50(genHist):
     genHist.AjouterEffet("""Vous empoignez le pommeau de votre épée, prêt à dégainer, et

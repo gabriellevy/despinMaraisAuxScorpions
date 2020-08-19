@@ -10,4 +10,4 @@ perso = generateur.GenererCaracs() #stocker les caracs dans situation ?
 del generateur # generateur n'est plus utile désormais car tout a été créé
 # print(histoire)
 execHistoire = ExecHistoire()
-execHistoire.LancerHistoire(histoire, "Numéros", "9")
+execHistoire.LancerHistoire(histoire, "Numéros", "12")
