@@ -171,6 +171,47 @@ def GenererNumeros11_20(genHist):
         GÉANT HABILETÉ: 9 ENDURANCE: 12
         """, "12", "GÉANT", 9, 12, "61", degatsMonstre = 4, pvRestantsMonstreAvantGoToFinal=6, goToEffetIdFuite="161")
 
+    genHist.AjouterEffet("""
+        « Je suis un guerrier en mission », répliquez-vous. Votre Anneau
+        ne vous avertit d'aucun danger et vous parlez donc au Maître des
+        Grenouilles sans éprouver la moindre inquiétude. Quel sorcier
+        avez-vous choisi de servir ?
+        """, "13")
+    genHist.AjouterChoixGoToEffet("Gayolard ?", goToEffetId="212")
+    genHist.AjouterChoixGoToEffet("Stratagus ?", goToEffetId="287")
+    genHist.AjouterChoixGoToEffet("Pompatarte ?", goToEffetId="376")
+
+    genHist.AjouterEffet("""
+        Le sentier vous mène à une petite clairière où, quelques années
+        plus tôt, un arbre immense s'est abattu en entraînant dans sa
+        chute plusieurs autres arbres. C'est la Clairière n° 32. Sinon, lisez ce qui suit. En
+        vous approchant, vous entendez des bruits de lutte. Derrière un
+        large tronc, vous apercevez alors un SCORPION GÉANT en train
+        de se battre avec un Nain vêtu d'une cuirasse. Le Nain est en
+        difficulté : au moment où vous apparaissez, le Scorpion l'a pris
+        par le cou dans l'une de ses pinces et le précipite sur le sol ou il
+        reste étendu sans vie. Il vous semble peu probable que vos
+        Pierres de Magie puissent avoir quelque effet sur un tel
+        adversaire.
+        """, "14")
+    genHist.AjouterChoixGoToEffet("Si vous y êtes déjà venu,", goToEffetId="338")
+    genHist.AjouterChoixGoToEffet("Si vous souhaitez quitter la clairière tandis que le monstre dévore sa victime", goToEffetId="88")
+    genHist.AjouterChoixGoToEffet("Si vous choisissez en revanche d'attaquer le Scorpion", goToEffetId="312")
+
+    genHist.AjouterEffet("""
+        Qu'allez-vous lui proposer ?
+        """, "15")
+    genHist.AjouterChoixGoToEffet("Un Aimant d'Or ?", goToEffetId="63")
+    genHist.AjouterChoixGoToEffet("Une Amulette appartenant à l'un des autres Maîtres ?", goToEffetId="198")
+    genHist.AjouterChoixGoToEffet("Un énorme joyau violet ?", goToEffetId="276")
+    genHist.AjouterChoixGoToEffet("Rien de tout cela ?", goToEffetId="212")
+
+    genHist.AjouterEffet("""
+        Quelque chose dans votre voix vous trahit. Il fait des gestes de la
+        main en vous fixant d'un regard inquisiteur. 
+        """, "16")
+    genHist.AjouterChoixGoToEffet("Est-il en train de lire dans vos pensées ?", goToEffetId="198")
+
 
 def GenererNumeros41_50(genHist):
     genHist.AjouterEffet("""Vous empoignez le pommeau de votre épée, prêt à dégainer, et
