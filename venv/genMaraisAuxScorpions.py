@@ -3,6 +3,7 @@ from numeros1_50 import *
 from numeros51_100 import *
 from numeros151_200 import *
 from numeros251_300 import *
+from regles import *
 from random import randrange
 from caracLDOELH import CaracLDOELH
 from chance import *
@@ -24,7 +25,7 @@ class GenMaraisAuxScorpions(GenHist):
 
     def GenererPreparationAventure(self):
         self.AjouterEvt("Préparation aventure")
-        self.AjouterEffet("Rien à faire ici pour l'instant")
+        GenererRegles(self)
 
     def GenererNumeros(self):
         self.AjouterEvt("Numéros")
@@ -61,7 +62,7 @@ class GenMaraisAuxScorpions(GenHist):
         effet.m_LancerDe = TenterChance( idGoToChanceux, idGoToMalchanceux)
 
     def AjouterEffetCombat(self, texte, id, nomMonstre, habileteMonstre, enduranceMonstre, goToVictoire, goToDefaite = "",
-                           degatsMonstre = 2, pvRestantsMonstreAvantGoToFinal=0, evt = ""):
+                           degatsMonstre = 2, pvRestantsMonstreAvantGoToFinal=0, goToEffetIdFuite="", evt = ""):
         """
         gère les combats tant qu'ils ne sont pas trop étranges au point de nécessiter une fonction spécifique
         :param texte:
@@ -76,5 +77,5 @@ class GenMaraisAuxScorpions(GenHist):
         :return:
         """
         effet = self.AjouterEffet(texte, id, evt)
-        effet.m_LancerDe = Combat( nomMonstre, habileteMonstre, enduranceMonstre, goToVictoire, goToDefaite, degatsMonstre, pvRestantsMonstreAvantGoToFinal)
+        effet.m_LancerDe = Combat( nomMonstre, habileteMonstre, enduranceMonstre, goToVictoire, goToDefaite, degatsMonstre, pvRestantsMonstreAvantGoToFinal, goToEffetIdFuite)
 

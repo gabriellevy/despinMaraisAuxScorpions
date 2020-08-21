@@ -5,18 +5,32 @@ from caracLDOELH import *
 
 class Combat(LancerDe):
 
-    def __init__(self, nomMonstre, habileteMonstre, enduranceMonstre, goToVictoire, goToDefaite = "", degatsMonstre = 2, pvRestantsMonstreAvantGoToFinal=0):
+    def __init__(self, nomMonstre, habileteMonstre, enduranceMonstre, goToVictoire, goToDefaite = "",
+                 degatsMonstre = 2, pvRestantsMonstreAvantGoToFinal=0, goToEffetIdFuite=""):
         LancerDe.__init__(self, 2)
         self.m_NomMonstre = nomMonstre
         self.m_HabileteMonstre = habileteMonstre
         self.m_EnduranceMonstre = enduranceMonstre
         self.m_GoToVictoire = goToVictoire
         self.m_GoToDefaite = goToDefaite
+        self.m_GoToEffetIdFuite = goToEffetIdFuite
         self.m_DegatsMonstre = degatsMonstre
         self.m_PvRestantsMonstreAvantGoToFinal = pvRestantsMonstreAvantGoToFinal
+        self.m_MessageLancerDe = "Validez pour lancer les dés"
+        if ( self.m_GoToEffetIdFuite != ""):
+            self.m_MessageLancerDe = self.m_MessageLancerDe + " ou appuyez sur 'f' pour fuir"
+        self.m_MessageLancerDe = self.m_MessageLancerDe + " : "
 
-    def LancerDe(self, effetActuel):
+    def LancerDe(self, effetActuel, input):
         situation = Situation()
+
+        # si le joueur tente de fuir :
+        if ( input == 'f' and self.m_GoToEffetIdFuite != ""):
+            assert effetActuel != None
+            assert isinstance(effetActuel, Effet)
+            effetActuel.m_GoToEffetId = self.m_GoToEffetIdFuite
+            situation.RetirerACarac(CaracLDOELH.ENDURANCE, self.m_DegatsMonstre)
+            return True
 
         resDeJoueur = self.CalculerResDe()
         resCombatJoueur = resDeJoueur + situation.m_Caracs[CaracLDOELH.HABILETE]

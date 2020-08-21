@@ -169,7 +169,7 @@ def GenererNumeros11_20(genHist):
         Aussi, faites attention !
         
         GÉANT HABILETÉ: 9 ENDURANCE: 12
-        """, "12", "GÉANT", 9, 12, "61", degatsMonstre = 4, pvRestantsMonstreAvantGoToFinal=6)
+        """, "12", "GÉANT", 9, 12, "61", degatsMonstre = 4, pvRestantsMonstreAvantGoToFinal=6, goToEffetIdFuite="161")
 
 
 def GenererNumeros41_50(genHist):
