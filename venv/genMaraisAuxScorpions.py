@@ -22,6 +22,9 @@ class GenMaraisAuxScorpions(GenHist):
     def GenererHistoire(self):
         self.GenererPreparationAventure()
         self.GenererNumeros()
+
+        self._m_Histoire.m_MessageVictoire = "Vous avez gagné"
+        self._m_Histoire.m_MessageDefaite = "Vous êtes mort, votre aventure s'arrête ici..."
         return self._m_Histoire
 
     def GenererPreparationAventure(self):

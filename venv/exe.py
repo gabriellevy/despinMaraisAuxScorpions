@@ -1,8 +1,10 @@
 from genMaraisAuxScorpions import GenMaraisAuxScorpions
 from exec.execHistoire import *
+from exec.situation import *
 
 # exécution de l'histoire
 print("------ Création de 'Le Marais aux scorpions'")
+situation = Situation()
 generateur = GenMaraisAuxScorpions()
 histoire = generateur.GenererHistoire()
 perso = generateur.GenererCaracs() #stocker les caracs dans situation ?
