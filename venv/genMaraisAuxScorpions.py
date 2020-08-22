@@ -6,7 +6,7 @@ from numeros251_300 import *
 from regles import *
 from random import randrange
 from caracLDOELH import CaracLDOELH
-from endurance import Endurance
+from caracEndurance import Endurance
 from chance import *
 from combat import *
 
@@ -52,12 +52,12 @@ class GenMaraisAuxScorpions(GenHist):
         """
         perso = GenHist.GenererCaracs(self)
         # note : ce serait mieux de pouvoir tirer au dé pour déterminer ces valeurs
-        habilete = 6 + randrange(1,7)
-        perso.CreerCaracVisible(CaracLDOELH.HABILETE, habilete)
-        chance = 6 + randrange(1,7)
-        perso.CreerCaracVisible(CaracLDOELH.CHANCE, chance)
+        habileteVal = 6 + randrange(1,7)
+        perso.CreerCaracVisible(CaracLDOELH.HABILETE, habileteVal, 0, habileteVal)
+        chanceVal = 6 + randrange(1,7)
+        perso.CreerCaracVisible(CaracLDOELH.CHANCE, chanceVal, 0, chanceVal)
         enduranceVal = 12 + randrange(1,7) + randrange(1,7)
-        enduranceCarac = Endurance(CaracLDOELH.ENDURANCE, enduranceVal)
+        enduranceCarac = Endurance(CaracLDOELH.ENDURANCE, enduranceVal, 0, enduranceVal)
         perso.AjouterCaracVisible(enduranceCarac)
 
         return perso
