@@ -226,6 +226,33 @@ def GenererNumeros11_20(genHist):
     genHist.AjouterRetireurCarac(CaracLDOELH.ENDURANCE, 3)
     # TODO MATHIEU : perte des pierres et des objets magiques (lesquels ?? je n'en connais aucun...)
 
+    genHist.AjouterEffet("""
+        Lorsqu'ils vous voient les charger en brandissant votre épée, les
+        Brigands prennent peur, et tous les cinq s'enfuient parmi les
+        arbres qui bordent la clairière. Vous ne vous arrêtez pas pour
+        autant et vous traversez la clairière en courant et en hurlant. Les
+        Brigands désemparés ne songent même pas à vous poursuivre.
+        """, "18", goToEffetId="19")
+
+    genHist.AjouterEffet("""
+        Deux sentiers permettent de quitter la clairière. L'un, orienté au
+        nord, est beaucoup plus large et mieux tracé, comme si de
+        nombreux voyageurs l'avaient emprunté. Dans quelle direction
+        allez-vous poursuivre votre chemin ?
+        """, "19")
+    genHist.AjouterChoixGoToEffet("Vers le nord ?", goToEffetId="280")
+    genHist.AjouterChoixGoToEffet("Vers l'est ?", goToEffetId="137")
+
+    genHist.AjouterEffet("""
+        Le fruit a un goût délicieux et vous sentez une impression de
+        bien-être se répandre dans tout votre corps. Vous récupérez 2
+        points d'ENDURANCE et 1 de CHANCE. Vous ne découvrez rien
+        d'intéressant par ailleurs
+        """, "20")
+    genHist.AjouterAjouteurCarac(CaracLDOELH.ENDURANCE, 2)
+    genHist.AjouterAjouteurCarac(CaracLDOELH.CHANCE, 1)
+    # TODO MATHIEU : à faire : gérer la limite max des valeurs de caracs
+
 
 def GenererNumeros41_50(genHist):
     genHist.AjouterEffet("""Vous empoignez le pommeau de votre épée, prêt à dégainer, et
