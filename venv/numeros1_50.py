@@ -251,8 +251,55 @@ def GenererNumeros11_20(genHist):
         """, "20")
     genHist.AjouterAjouteurCarac(CaracLDOELH.ENDURANCE, 2)
     genHist.AjouterAjouteurCarac(CaracLDOELH.CHANCE, 1)
-    # TODO MATHIEU : à faire : gérer la limite max des valeurs de caracs
 
+
+def GenererNumeros21_30(genHist):
+    genHist.AjouterEffet("""
+        Vous vous reposez quelques minutes et vous récupérez 1 point
+        d'ENDURANCE. Vous entendez alors un bruit à l'intérieur de
+        l'arbre.
+        """, "21")
+    genHist.AjouterAjouteurCarac(CaracLDOELH.ENDURANCE, 1)
+    genHist.AjouterChoixGoToEffet("Si vous souhaitez savoir ce qui se cache dans cet arbre", goToEffetId="55")
+    genHist.AjouterChoixGoToEffet("Si vous préférez ne pas vous en préoccuper", goToEffetId="390")
+
+    genHist.AjouterEffet("""
+        Lorsque vous mettez les graines dans votre poche, de nouvelles
+        pousses apparaissent déjà à la base des arbres. Il vous faut partir
+        au plus vite. Quelle direction allez-vous prendre ?
+        """, "22")
+    genHist.AjouterChoixGoToEffet("Le nord ?", goToEffetId="320")
+    genHist.AjouterChoixGoToEffet("Le sud ?", goToEffetId="90")
+    genHist.AjouterChoixGoToEffet("L'ouest ?", goToEffetId="11")
+
+    genHist.AjouterEffet("""
+        L'Anneau de Cuivre reste froid, ce qui vous indique que la
+        Maîtresse des Oiseaux est une sorcière bienfaisante. Vous lui
+        expliquez alors l'objet de votre quête et vous lui demandez son
+        aide. « Ce marchand est idiot, dit-elle en hochant la tête, car
+        même s'il parvient à se procurer une carte du Marais, les sorciers
+        malhonnêtes qui hantent les lieux s'efforceront de piller ses
+        roulottes. Mais vous êtes un aventurier courageux et je vais vous
+        aider à éviter les plus grands dangers de votre voyage. »
+        """, "23", goToEffetId="248")
+
+    genHist.AjouterEffetTenterLaChanceGoTo(
+        """
+        Le Feu Follet danse devant vous et vous le suivez. Le sol devient
+        bientôt de plus en plus humide, et vous tombez soudain dans un
+        trou rempli de vase. Le Feu Follet disparaît alors : il n'était là que
+        pour tromper les voyageurs imprudents dans votre genre et
+        contribuer à leur perte. Tentez votre Chance. Si vous êtes
+        Chanceux, vous parvenez à vous extraire sans dommage de la
+        vase. Si vous êtes Malchanceux, vous arrivez malgré tout à vous
+        hisser hors du trou, mais au prix de tels efforts que vous perdez 2
+        points d'ENDURANCE. Vous vous tenez enfin sur un sol plus ferme
+        et vous vous félicitez de posséder l'Anneau de Cuivre car, sans
+        lui, vous seriez irrémédiablement perdu. Heureusement, vous
+        savez grâce à sa magie quel chemin il convient ' de prendre pour
+        trouver la clairière.
+        """, "24")
+        # TODO MATHIEU : faire un tenter la chance avec callback perte d'endurance + goToEffetId="249"
 
 def GenererNumeros41_50(genHist):
     genHist.AjouterEffet("""Vous empoignez le pommeau de votre épée, prêt à dégainer, et
