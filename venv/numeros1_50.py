@@ -212,6 +212,20 @@ def GenererNumeros11_20(genHist):
         """, "16")
     genHist.AjouterChoixGoToEffet("Est-il en train de lire dans vos pensées ?", goToEffetId="198")
 
+    genHist.AjouterEffet("""
+        Si cet homme est malfaisant, vous ne voulez rien avoir à faire
+        avec lui et vous traversez la clairière sans lui prêter attention.
+        Cependant, au moment où vous allez rejoindre le sentier, une
+        cordelette s'enroule autour de votre cou. Vous vous débattez,
+        mais le voleur vous étrangle et vous vous écroulez sur le sol, sans
+        connaissance. Vous perdez aussitôt 3 points d'ENDURANCE.
+        Lorsque vous reprenez conscience, vous vous sentez mal et vous
+        avez le tournis. De plus, toutes vos Pierres et vos autres objets
+        magiques ont disparu, et il n'y a plus trace du voleur.
+        """, "17", goToEffetId="179")
+    genHist.AjouterRetireurCarac(CaracLDOELH.ENDURANCE, 3)
+    # TODO MATHIEU : perte des pierres et des objets magiques (lesquels ?? je n'en connais aucun...)
+
 
 def GenererNumeros41_50(genHist):
     genHist.AjouterEffet("""Vous empoignez le pommeau de votre épée, prêt à dégainer, et
