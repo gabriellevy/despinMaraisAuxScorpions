@@ -317,6 +317,88 @@ def GenererNumeros21_30(genHist):
         """, "24", Chanceux24, Malchanceux24)
     effet24.m_GoToEffetId = "249"
 
+    genHist.AjouterEffet("""
+        L'Aigle lance un cri et vole en cercle autour de la clairière, puis il
+        s'éloigne vers son nid. Vous pouvez vous estimer heureux de
+        repartir sans dommage !
+        """, "25", goToEffetId="202")
+
+    genHist.AjouterEffetCombat("""
+        Vous sentez que le MAÎTRE DES ARAIGNÉES est un
+        personnage profondément malfaisant et vous l'attaquez avec
+        votre épée. Il se défend en brandissant une baguette magique
+        luisante, dont l'extrémité est très pointue et enduite d'une
+        substance verdâtre et pestilentielle. Chaque fois que vous
+        recevrez un coup de cette baguette magique, vous perdrez 1 point
+        d'ENDURANCE supplémentaire (3 au lieu de 2).
+        
+        MAÎTRE DES ARAIGNÉES HABILETÉ : 9 ENDURANCE : 6
+        """, "26", "MAÎTRE DES ARAIGNÉES", 9, 6, "354", degatsMonstre=3)
+
+    genHist.AjouterEffet("""
+        Grognard vous conseille d'aller chercher Pompatarte au marché
+        du village. Mais dès que vous pénétrez dans le dédale de rues où
+        s'alignent un nombre impressionnant de boutiques, vous êtes
+        complètement perdu. Vous demandez votre chemin à plusieurs
+        reprises et, finalement, un groupe d'enfants d'humeur joyeuse
+        vous conduit devant une grande maison qui s'élève en bordure
+        du marché. Vous frappez à la porte et c'est un Gobelin qui vous
+        ouvre ! Ou plutôt une Gobeline qui fait office de servante et n'a
+        rien à voir avec les guerriers Gobelins que vous avez eu l'occasion
+        de combattre. Elle vous mène dans une bibliothèque où
+        Pompatarte est assis. C'est l'un des hommes les plus étranges que
+        vous ayez jamais vus... Il est très grand et obèse avec une longue
+        barbe soigneusement nouée en tresses et une peau d'un rouge
+        brillant ! Vous lui racontez aussitôt votre histoire en lui
+        demandant s'il a besoin de quelqu'un tel que vous. « J'en ai
+        besoin, en effet, marmonne-t-il, mais qu'est-ce qui vous fait
+        croire que vous pourrez survivre dans le Marais aux Scorpions
+        alors que tant d'autres n'en sont jamais revenus ? »
+        """, "27")
+    genHist.AjouterChoixGoToEffet("""
+        Si vous souhaitez lui parler de la Vieille Femme 
+        et de l'Anneau de Cuivre que vous portez au doigt
+        """, goToEffetId="2")
+    genHist.AjouterChoixGoToEffet("""
+        Si vous préférez lui adresser un sourire en lui assurant que 
+        vous êtes un guerrier hors pair
+        """, goToEffetId="173")
+
+    genHist.AjouterEffetCombat("""
+        Il y a plusieurs ARBRES-ÉPÉES, mais vous les combattrez
+        comme s'il s'agissait d'un seul et même adversaire. Vous avez un
+        avantage sur eux : ils ne peuvent pas vous voir et ne vous
+        repèrent que par les sons que vous émettez. Ces arbres sont
+        nombreux cependant, et chacun d'eux est doté de plusieurs
+        branches qui brandissent des lames acérées.
+        
+        ARBRES-ÉPÉES HABILETÉ: 9 ENDURANCE: 12
+        """, "28", "ARBRES-ÉPÉES", 9, 12, "362")
+
+    genHist.AjouterEffetTenterLaChanceGoTo("""
+        Vous vous rendez compte qu'il serait tout à fait stupide de révéler
+        à cet homme que vous vous êtes mis au service d'un sorcier
+        malfaisant. Aussi lui répondez-vous par un mensonge. « Je sers
+        les forces du Bien, assurez-vous. Mais pour l'instant, je voudrais
+        simplement trouver le chemin qui me permettra de sortir du
+        Marais. Je cherche l'un de ces sorciers que l'on appelle les
+        Maîtres. » Tentez votre Chance.
+        """, "29", "185", "378")
+
+    genHist.AjouterEffet("""
+        Vous commencez par jeter vos Bottes et votre Sac à Dos au bas
+        de la falaise, puis vous plongez vous-même. Hélas ! vous vous
+        rendez très vite compte, mais trop tard, que l'eau est peu
+        profonde et le lit de la rivière, recouvert d'une épaisse couche de
+        vase. Vous voilà enlisé. Vous parvenez cependant à vous dégager,
+        mais lorsque vous atteignez enfin la surface de l'eau, vous vous
+        trouvez nez à nez avec un Crocodile aux mâchoires grandes
+        ouvertes. Vous empoignez votre épée, mais votre geste est vain :
+        les mâchoires se referment sur vous et votre aventure se termine
+        dans l'estomac du reptile.
+        """, "30")
+    # TODO MATHIEU : convertir en effet défaite
+
 def GenererNumeros41_50(genHist):
     genHist.AjouterEffet("""Vous empoignez le pommeau de votre épée, prêt à dégainer, et
         vous leur lancez un défi d'une voix retentissante. Votre attitude,
