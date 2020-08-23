@@ -1,4 +1,5 @@
 from caracLDOELH import CaracLDOELH
+from exec.situation import *
 
 def GenererNumeros1_10(genHist):
     genHist.AjouterEffet("""Le chemin est long pour arriver jusqu'au Marais qui s'étend à
@@ -283,23 +284,38 @@ def GenererNumeros21_30(genHist):
         aider à éviter les plus grands dangers de votre voyage. »
         """, "23", goToEffetId="248")
 
-    genHist.AjouterEffetTenterLaChanceGoTo(
+    def FinTexte24():
+        print("""
+        Vous vous tenez enfin sur un sol plus ferme
+        et vous vous félicitez de posséder l'Anneau de Cuivre car, sans
+        lui, vous seriez irrémédiablement perdu. Heureusement, vous
+        savez grâce à sa magie quel chemin il convient ' de prendre pour
+        trouver la clairière.
+        """)
+    def Malchanceux24():
+        print(
+            """
+            Vous arrivez malgré tout à vous hisser hors du trou, 
+            mais au prix de tels efforts que vous perdez 2 points d'ENDURANCE.
+            """
+            )
+        situation = Situation()
+        situation.RetirerACarac(CaracLDOELH.ENDURANCE, 2)
+        FinTexte24()
+        return True
+    def Chanceux24():
+        print("vous parvenez à vous extraire sans dommage de la vase.")
+        FinTexte24()
+        return True
+    effet24 = genHist.AjouterEffetTenterLaChance(
         """
         Le Feu Follet danse devant vous et vous le suivez. Le sol devient
         bientôt de plus en plus humide, et vous tombez soudain dans un
         trou rempli de vase. Le Feu Follet disparaît alors : il n'était là que
         pour tromper les voyageurs imprudents dans votre genre et
-        contribuer à leur perte. Tentez votre Chance. Si vous êtes
-        Chanceux, vous parvenez à vous extraire sans dommage de la
-        vase. Si vous êtes Malchanceux, vous arrivez malgré tout à vous
-        hisser hors du trou, mais au prix de tels efforts que vous perdez 2
-        points d'ENDURANCE. Vous vous tenez enfin sur un sol plus ferme
-        et vous vous félicitez de posséder l'Anneau de Cuivre car, sans
-        lui, vous seriez irrémédiablement perdu. Heureusement, vous
-        savez grâce à sa magie quel chemin il convient ' de prendre pour
-        trouver la clairière.
-        """, "24")
-        # TODO MATHIEU : faire un tenter la chance avec callback perte d'endurance + goToEffetId="249"
+        contribuer à leur perte. Tentez votre Chance.  
+        """, "24", Chanceux24, Malchanceux24)
+    effet24.m_GoToEffetId = "249"
 
 def GenererNumeros41_50(genHist):
     genHist.AjouterEffet("""Vous empoignez le pommeau de votre épée, prêt à dégainer, et
