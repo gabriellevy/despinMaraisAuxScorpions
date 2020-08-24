@@ -398,7 +398,129 @@ def GenererNumeros21_30(genHist):
         dans l'estomac du reptile.
         """, "30")
 
+def GenererNumeros31_40(genHist):
+    genHist.AjouterEffet("""
+        En poursuivant votre marche, vous sentez que vous allez trop
+        loin vers l'est depuis votre entrée dans le marécage. Vous vous
+        demandez alors si vous avez pris le bon chemin et, soudain, vous
+        entrez dans une clairière envahie d'herbes. C'est la Clairière n°
+        21. Vous trouvez au milieu de la clairière un bassin rempli
+        d'une eau qui semble pure comme le cristal. Une petite plage de
+        sable fin borde l'un des côtés du bassin. Aucun autre chemin ne
+        permet de sortir de la clairière en dehors de celui par lequel vous
+        êtes arrivé. Qu'allez-vous faire ?
+        """, "31")
+    genHist.AjouterChoixGoToEffet("Si vous y êtes déjà venu", goToEffetId="364")
+    genHist.AjouterChoixGoToEffet("Quitter les lieux en retournant vers l'ouest ?", goToEffetId="47")
+    genHist.AjouterChoixGoToEffet("Attendre quelques minutes pour voir si aucun danger ne vous menace ?", goToEffetId="394")
+
+    genHist.AjouterEffet("""
+        Vous coupez les fleurs à grands coups d'épée, mais elles sont en
+        trop grand nombre pour que vous puissiez toutes les abattre et
+        vous vous épuisez vainement. Vos efforts vous coûtent 2 points
+        d'ENDURANCE et 1 point d'HABILETÉ.
+        """, "32")
+    genHist.AjouterChoixGoToEffet("Si vous préférez abandonner la partie et vous enfuir", goToEffetId="269")
+    genHist.AjouterChoixGoToEffet("Si vous souhaitez faire usage de magie", goToEffetId="80")
+    genHist.AjouterRetireurCarac(CaracLDOELH.ENDURANCE, 2)
+    genHist.AjouterRetireurCarac(CaracLDOELH.HABILETE, 1)
+
+    genHist.AjouterEffet("""
+        Vous vous hâtez de traverser la clairière en espérant éviter une
+        nouvelle attaque de l'Herbe à Pinces. Hélas ! elle se dresse encore
+        plus vite devant vous et ses redoutables tenailles vertes s'ouvrent
+        avidement en essayant de vous attraper.
+        """, "33")
+    genHist.AjouterChoixGoToEffet("Si vous souhaitez combattre l'Herbe à Pinces à coups d'épée", goToEffetId="134")
+    genHist.AjouterChoixGoToEffet("Si vous préférez recourir à la magie", goToEffetId="167")
+
+    genHist.AjouterEffet("""
+        Quelle Pierre de Magie allez-vous utiliser contre le Monstre du
+        Bassin ?
+        """, "34")
+    genHist.AjouterChoixGoToEffet("Flétrissure ?", goToEffetId="237")
+    genHist.AjouterChoixGoToEffet("Feu ?", goToEffetId="291")
+    genHist.AjouterChoixGoToEffet("Terreur ?", goToEffetId="356")
+    genHist.AjouterChoixGoToEffet("Aucune d'entre elles ?", goToEffetId="209")
+
+    genHist.AjouterEffet("""
+        Cette fois encore, les Orques visent mal et les deux flèches vous
+        manquent, mais, soudain, elles décrivent une courbe et viennent
+        se planter dans votre Sac à Dos ! Une seule d'entre elles parvient
+        à vous égratigner l'épaule et vous perdez 1 point d'ENDURANCE.
+        Vous vous rendez compte alors que l'Aimant d'Or est maudit et
+        qu'il attire les flèches... Vous avez de la chance île l'avoir rangé
+        dans votre Sac à Dos plutôt que de le porter directement sur vous
+        ! Qu'allez-vous faire à présent ?
+        """, "35")
+    genHist.AjouterChoixGoToEffet("Attaquer avec votre épée ?", goToEffetId="281")
+    genHist.AjouterChoixGoToEffet("Recourir à la magie ?", goToEffetId="399")
+    genHist.AjouterChoixGoToEffet("Prendre la Fuite ?", goToEffetId="309")
+    genHist.AjouterRetireurCarac(CaracLDOELH.ENDURANCE, 1)
+
+    genHist.AjouterEffet("""
+        Vous expliquez le but de votre quête au Maître des Jardins.
+        """, "36")
+    genHist.AjouterChoixGoToEffet("Si vous avez déjà découvert le buisson d'Anthérique", goToEffetId="283")
+    genHist.AjouterChoixGoToEffet("sinon", goToEffetId="396")
+
+    genHist.AjouterEffet("""
+         
+        """, "37")
+    genHist.AjouterChoixGoToEffet("Si vous souhaitez dire la vérité au sujet de votre quête", goToEffetId="292")
+    genHist.AjouterChoixGoToEffet("Si vous préférez inventer une histoire et bavarder quelques moments", goToEffetId="220")
+
+    genHist.AjouterEffet("""
+        La Vase est morte et ses restes se putréfient à vue d'oeil. Il s'en
+        dégage une odeur insupportable.
+        """, "38", goToEffetId="153")
+
+    genHist.AjouterEffet("""
+        Vous jetez un sort d'Amitié à la Licorne qui vous regarde d'un air
+        soupçonneux. De toute évidence, elle ne se fie pas aux humains.
+        Votre magie fait cependant de l'effet car elle finit par se
+        désintéresser de vous pour brouter l'herbe de la clairière.
+        """, "39", goToEffetId="348")
+
+    genHist.AjouterEffet("""
+        Dominant votre peur, vous vous approchez de la sinistre tour.
+        Des Chauves-Souris volent en tournoyant autour de son sommet.
+        En vous approchant, vous remarquez une tête hideuse sculptée
+        sur la porte de fer. La porte s'ouvre alors devant vous et
+        Stratagus qui vous attend apparaît. Il est grand, d'une maigreur
+        squelettique et porte une toge noire sur laquelle sont brodés des
+        motifs écarlates qui semblent étinceler. Il vous accueille
+        aimablement, mais l'Anneau continue de diffuser sa chaleur
+        autour de votre doigt, vous avertissant ainsi que vous êtes en
+        présence d'un être maléfique. « Je sais tout de vous, dit
+        Stratagus, vous voulez explorer le Marais, et Grognard, ce
+        fouineur imbécile, vous a envoyé ici. Mais qui vous fait croire que
+        vous êtes digne de me servir ? J'ai besoin d'un héros qui n'ait
+        peur de rien. » Qu'allez-vous faire ?
+        """, "40")
+    genHist.AjouterChoixGoToEffet("Lui lancer un défi ?", goToEffetId="4")
+    genHist.AjouterChoixGoToEffet("""
+        Lui affirmer que vous êtes un guerrier intrépide et que, grâce à
+        votre Anneau Magique, vous ne perdrez jamais votre chemin ?
+        """, goToEffetId="50")
+    genHist.AjouterChoixGoToEffet("""
+        Vous contenter de sourire en lui déclarant que vous n'avez peur
+        de rien ?
+        """, goToEffetId="97")
+
+
 def GenererNumeros41_50(genHist):
+    genHist.AjouterEffet("""Vous entrez dans une clairière entourée d'arbres dont les troncs
+        sont recouverts de lierre. C'est la Clairière n°30. 
+        Apparemment, il n'y a rien d'intéressant alentour et vous vous
+        apprêtez donc à repartir lorsque vous vous trouvez soudain pris
+        dans des sables mouvants ! Tentez-votre Chance. Si vous êtes
+        Chanceux, vous perdez 2 points d'ENDURANCE et vous vous
+        rendez au 270. Si vous êtes Malchanceux, rendez-vous au 87.
+        """, "41")
+    genHist.AjouterChoixGoToEffet("Si vous y êtes déjà venu", goToEffetId="382")
+    # pas fait
+
     genHist.AjouterEffet("""Vous empoignez le pommeau de votre épée, prêt à dégainer, et
         vous leur lancez un défi d'une voix retentissante. Votre attitude,
         cependant, ne les impressionne pas le moins du monde : elle les
