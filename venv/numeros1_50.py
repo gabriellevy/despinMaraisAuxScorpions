@@ -385,7 +385,7 @@ def GenererNumeros21_30(genHist):
         Maîtres. » Tentez votre Chance.
         """, "29", "185", "378")
 
-    genHist.AjouterEffet("""
+    genHist.AjouterEffetDefaite("""
         Vous commencez par jeter vos Bottes et votre Sac à Dos au bas
         de la falaise, puis vous plongez vous-même. Hélas ! vous vous
         rendez très vite compte, mais trop tard, que l'eau est peu
@@ -397,7 +397,6 @@ def GenererNumeros21_30(genHist):
         les mâchoires se referment sur vous et votre aventure se termine
         dans l'estomac du reptile.
         """, "30")
-    # TODO MATHIEU : convertir en effet défaite
 
 def GenererNumeros41_50(genHist):
     genHist.AjouterEffet("""Vous empoignez le pommeau de votre épée, prêt à dégainer, et
