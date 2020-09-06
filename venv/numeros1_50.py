@@ -533,6 +533,32 @@ def GenererNumeros41_50(genHist):
         """,
         "41_b", Chanceux41_b, Malchanceux41_b, "270", "87")
 
+    genHist.AjouterEffet("""
+            Vous fouillez le corps du malheureux Nain dans l'espoir de
+            découvrir quelque chose d'intéressant. Son armure, bien
+            entendu, est trop petite pour vous, mais, dans une poche
+            attachée à sa ceinture, vous trouvez une fiole de potion.
+            """, "42")
+    genHist.AjouterChoixGoToEffet("Si vous décidez de boire ce liquide", goToEffetId="253")
+    genHist.AjouterChoixGoToEffet("Si vous préférez ne pas tenter l'expérience", goToEffetId="88")
+
+    genHist.AjouterEffetTenterLaChanceGoTo("Tentez votre Chance.", "43", "339", "313")
+
+    44 pas fait
+    genHist.AjouterEffet("""
+            Personne ne vous attaque lorsque vous traversez le cours d'eau,
+            mais en atteignant l'autre rive, vous vous apercevez avec dégoût
+            que de grosses Sangsues se sont accrochées à vos jambes et vous
+            sucent le sang ! Lancez deux dés et réduisez votre total
+            d'ENDURANCE d'un nombre de points égal au plus bas des deux
+            chiffres obtenus. Si vous faites un double, vous perdrez autant de
+            points d'ENDURANCE que le chiffre indiqué par l'un et l'autre dé.
+            Vous pourrez ensuite (si vous êtes toujours vivant) prendre la
+            direction du nord ou du sud. Si vous souhaitez aller au nord,
+            rendez-vous au 157. Si vous préférez aller au sud, rendez-vous au
+            398.
+            """, "44")
+
     genHist.AjouterEffet("""Vous empoignez le pommeau de votre épée, prêt à dégainer, et
         vous leur lancez un défi d'une voix retentissante. Votre attitude,
         cependant, ne les impressionne pas le moins du monde : elle les
