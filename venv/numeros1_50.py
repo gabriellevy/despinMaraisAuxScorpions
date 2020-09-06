@@ -1,5 +1,6 @@
 from caracLDOELH import CaracLDOELH
 from exec.situation import *
+from abs.condition import *
 
 def GenererNumeros1_10(genHist):
     genHist.AjouterEffet("""Le chemin est long pour arriver jusqu'au Marais qui s'étend à
@@ -510,16 +511,16 @@ def GenererNumeros31_40(genHist):
 
 
 def GenererNumeros41_50(genHist):
+    genHist.AjouterEffetGoToSiDejaVisite("382", "41") # si aps déjà visité passera auto au 41_b
+
     genHist.AjouterEffet("""Vous entrez dans une clairière entourée d'arbres dont les troncs
-        sont recouverts de lierre. C'est la Clairière n°30. 
+        sont recouverts de lierre. 
         Apparemment, il n'y a rien d'intéressant alentour et vous vous
         apprêtez donc à repartir lorsque vous vous trouvez soudain pris
         dans des sables mouvants ! Tentez-votre Chance. Si vous êtes
         Chanceux, vous perdez 2 points d'ENDURANCE et vous vous
         rendez au 270. Si vous êtes Malchanceux, rendez-vous au 87.
-        """, "41")
-    genHist.AjouterChoixGoToEffet("Si vous y êtes déjà venu", goToEffetId="382")
-    # pas fait
+        """, "41_b")
 
     genHist.AjouterEffet("""Vous empoignez le pommeau de votre épée, prêt à dégainer, et
         vous leur lancez un défi d'une voix retentissante. Votre attitude,
