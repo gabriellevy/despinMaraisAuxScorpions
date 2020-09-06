@@ -69,9 +69,10 @@ class GenMaraisAuxScorpions(GenHist):
         effet.m_LancerDe = TenterChance( idGoToChanceux = idGoToChanceux, idGoToMalchanceux = idGoToMalchanceux)
         return effet
 
-    def AjouterEffetTenterLaChance(self, texte, id, callbackChanceux, callbackMalchanceux, evt = ""):
+    def AjouterEffetTenterLaChance(self, texte, id, callbackChanceux, callbackMalchanceux, idGoToChanceux = None, idGoToMalchanceux = None, evt = ""):
         effet = self.AjouterEffet(texte, id, evt)
-        effet.m_LancerDe = TenterChance(callbackChanceux = callbackChanceux, callbackMalchanceux = callbackMalchanceux)
+        effet.m_LancerDe = TenterChance(callbackChanceux = callbackChanceux, callbackMalchanceux = callbackMalchanceux,
+                                        idGoToChanceux = idGoToChanceux, idGoToMalchanceux = idGoToMalchanceux)
         return effet
 
     def AjouterEffetCombat(self, texte, id, nomMonstre, habileteMonstre, enduranceMonstre, goToVictoire, goToDefaite = "",

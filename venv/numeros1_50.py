@@ -450,7 +450,7 @@ def GenererNumeros31_40(genHist):
         se planter dans votre Sac à Dos ! Une seule d'entre elles parvient
         à vous égratigner l'épaule et vous perdez 1 point d'ENDURANCE.
         Vous vous rendez compte alors que l'Aimant d'Or est maudit et
-        qu'il attire les flèches... Vous avez de la chance île l'avoir rangé
+        qu'il attire les flèches... Vous avez de la chance de l'avoir rangé
         dans votre Sac à Dos plutôt que de le porter directement sur vous
         ! Qu'allez-vous faire à présent ?
         """, "35")
@@ -513,14 +513,25 @@ def GenererNumeros31_40(genHist):
 def GenererNumeros41_50(genHist):
     genHist.AjouterEffetGoToSiDejaVisite("382", "41") # si aps déjà visité passera auto au 41_b
 
-    genHist.AjouterEffet("""Vous entrez dans une clairière entourée d'arbres dont les troncs
+    def Malchanceux41_b():
+        # Si vous êtes Malchanceux, rendez-vous au .
+        return True
+    def Chanceux41_b():
+        # et vous vous
+        #         rendez au .
+        print("Vous perdez 2 points d'ENDURANCE")
+        situation = Situation()
+        situation.RetirerACarac(CaracLDOELH.ENDURANCE, 2)
+
+        return True
+    effet41_b = genHist.AjouterEffetTenterLaChance("""
+        Vous entrez dans une clairière entourée d'arbres dont les troncs
         sont recouverts de lierre. 
         Apparemment, il n'y a rien d'intéressant alentour et vous vous
         apprêtez donc à repartir lorsque vous vous trouvez soudain pris
-        dans des sables mouvants ! Tentez-votre Chance. Si vous êtes
-        Chanceux, vous perdez 2 points d'ENDURANCE et vous vous
-        rendez au 270. Si vous êtes Malchanceux, rendez-vous au 87.
-        """, "41_b")
+        dans des sables mouvants ! Tentez-votre Chance.
+        """,
+        "41_b", Chanceux41_b, Malchanceux41_b, "270", "87")
 
     genHist.AjouterEffet("""Vous empoignez le pommeau de votre épée, prêt à dégainer, et
         vous leur lancez un défi d'une voix retentissante. Votre attitude,
