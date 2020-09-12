@@ -38,6 +38,7 @@ class GenMaraisAuxScorpions(GenHist):
         GenererNumeros21_30(self)
         GenererNumeros31_40(self)
         GenererNumeros41_50(self)
+        GenererNumeros51_60(self)
 
         GenererNumeros91_100(self)
 
