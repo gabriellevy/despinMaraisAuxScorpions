@@ -513,7 +513,7 @@ def GenererNumeros31_40(genHist):
 
 
 def GenererNumeros41_50(genHist):
-    genHist.AjouterEffetGoToSiDejaVisite("382", "41") # si aps déjà visité passera auto au 41_b
+    genHist.AjouterEffetGoToSiDejaVisite("382", "41") # si pas déjà visité passera auto au 41_b
 
     def Malchanceux41_b():
         # Si vous êtes Malchanceux, rendez-vous au .
@@ -526,7 +526,7 @@ def GenererNumeros41_50(genHist):
         situation.RetirerACarac(CaracLDOELH.ENDURANCE, 2)
 
         return True
-    effet41_b = genHist.AjouterEffetTenterLaChance("""
+    genHist.AjouterEffetTenterLaChance("""
         Vous entrez dans une clairière entourée d'arbres dont les troncs
         sont recouverts de lierre. 
         Apparemment, il n'y a rien d'intéressant alentour et vous vous
@@ -553,7 +553,6 @@ def GenererNumeros41_50(genHist):
                 res = resDe
             elif res == resDe:
                 res += resDe
-
         print("Vous perdez {} points d'ENDURANCE".format(res))
         situation = Situation()
         situation.RetirerACarac(CaracLDOELH.ENDURANCE, res)
@@ -573,6 +572,32 @@ def GenererNumeros41_50(genHist):
     genHist.AjouterChoixGoToEffet("Si vous préférez aller au sud", goToEffetId="398")
     effet44.m_LancerDe = LancerDe(2, ResLancerDe44)
 
+    genHist.AjouterEffet("""
+        Vous vous méfiez de ce pont qui vous paraît trop simple : il doit
+        sans doute dissimuler un piège quelconque. Vous rebroussez
+        donc chemin dans la direction d'où vous êtes venu.
+        """, "45")
+    genHist.AjouterChoixGoToEffet("Si vous veniez du nord", goToEffetId="331")
+    genHist.AjouterChoixGoToEffet("Si vous veniez du sud", goToEffetId="303")
+
+    genHist.AjouterEffet("""
+        Il n'y a pas grand-chose à faire en cet endroit, à part essayer
+        d'entrer dans la hutte, mais la porte semble en avoir été
+        verrouillée par quelque tour de magie car il est rigoureusement
+        impossible de l'ouvrir.
+        """, "46")
+    genHist.AjouterChoixGoToEffet("Vous décidez donc de repartir", goToEffetId="314")
+
+    genHist.AjouterEffet("""
+        Vous arrivez dans une petite clairière envahie d'herbes. C'est la
+        Clairière n°3. Vous jetez un regard autour de vous mais vous ne
+        découvrez rien d'intéressant. Trois chemins permettent de
+        quitter cette clairière. Quelle direction allez-vous prendre ?
+        """, "47")
+    genHist.AjouterChoixGoToEffet("Le sud ?", goToEffetId="290")
+    genHist.AjouterChoixGoToEffet("L'est ?", goToEffetId="31")
+    genHist.AjouterChoixGoToEffet("L'ouest ?", goToEffetId="118")
+
     genHist.AjouterEffet("""Vous empoignez le pommeau de votre épée, prêt à dégainer, et
         vous leur lancez un défi d'une voix retentissante. Votre attitude,
         cependant, ne les impressionne pas le moins du monde : elle les
@@ -587,3 +612,29 @@ def GenererNumeros41_50(genHist):
         ces paisibles villageois.
         """, "48")
     genHist.AjouterRetireurCarac(CaracLDOELH.CHANCE, 1)
+
+    genHist.AjouterEffetFin("""
+        Poussé par l'appât du gain, vous ôtez prestement de votre doigt
+        l'Anneau de Cuivre et vous le lancez sur la table. Pompatarte
+        vous compte alors cent Pièces d'Or et les glisse dans un sac qu'il
+        vous tend. Vous avez désormais suffisamment d'argent pour
+        vivre plusieurs années sans rien faire. Si vous préférez dépenser
+        sans compter, ce sont quelques mois d'une existence fastueuse
+        qui vous attendent à dater d'aujourd'hui... Mais l'Anneau de
+        Cuivre ne vous appartient plus et, sans lui, il n'est plus question
+        de vous risquer dans le Marais aux Scorpions. Votre aventure
+        s'achève donc avant d'avoir commencé.
+        """, "49")
+
+    genHist.AjouterEffet("""
+        Il écoute votre histoire avec grand intérêt. « Un anneau magique
+        ? Vraiment ? » s'étonne-t-il. Vous hochez la tête et vous tendez la
+        main vers lui pour qu'il puisse voir l'Anneau de Cuivre briller à
+        votre doigt. Ses yeux alors s'agrandissent et il recule d'un pas
+        tout en faisant un geste étrange de la main. Vous vous doutez
+        qu'il est en train de se livrer à quelque passe magique. Qu'allezvous
+        faire ?
+        """, "50")
+    genHist.AjouterChoixGoToEffet("Bondir sur lui pour l'attaquer ?", goToEffetId="373")
+    genHist.AjouterChoixGoToEffet("Attendre de voir ce qu'il va faire ?", goToEffetId="222")
+    genHist.AjouterChoixGoToEffet("Vous enfuir de cette tour ?", goToEffetId="315")
